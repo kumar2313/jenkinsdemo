@@ -28,9 +28,9 @@ public class TestGreeter {
   }
 
 @Test
-  public void greetShouldIncludeTheOneBeingGreeted() {
+  public void intentionally_failed() {
 
-    assertThat(false);
+    assertTrue(false);
   }
   @Test
   public void greetShouldIncludeGreetingPhrase() {
