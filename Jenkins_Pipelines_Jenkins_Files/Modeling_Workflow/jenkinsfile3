@@ -17,10 +17,10 @@ pipeline {
                     }
                 }
                 stage('linux-amd64-sumit') {
-                    //agent {
-                   //     label 'Agent_911'
-                   // }
-                    agent any
+                    agent {
+                        label 'Agent_911'
+                    }
+                    //agent any
                     steps {
                         echo "Building release ${RELEASE} for ${STAGE_NAME} with log level ${LOG_LEVEL}..."
                         sh 'sleep 10'
