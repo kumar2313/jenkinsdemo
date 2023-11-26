@@ -17,7 +17,9 @@ pipeline {
                     }
                 }
                 stage('linux-amd64') {
-                    agent any
+                    agent {
+                        label 'Agent_911'
+                    }
                     steps {
                         echo "Building release ${RELEASE} for ${STAGE_NAME} with log level ${LOG_LEVEL}..."
                         sh 'sleep 10'
