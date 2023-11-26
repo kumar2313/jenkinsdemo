@@ -24,7 +24,7 @@ pipeline {
                 ok 'Do it!'
                 parameters {
                     string(name: 'TARGET_ENVIRONMENT', defaultValue: 'PROD', description: 'Target deployment environment')
-                    choice(name: ‘BRANCH’, choices: [‘Master’, ‘Dev’], description: ‘Choose the branch’)
+                    choice(name: 'BRANCH', choices: ['Master', 'Dev'], description: 'Choose the branch')
                 }
             }
             steps {
