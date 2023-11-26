@@ -8,7 +8,9 @@ pipeline {
     stages {
 
         stage('Build') {
-            agent any
+            agent {
+            label 'Agent_911'
+            }
             environment {
                 LOG_LEVEL='INFO'
             }
