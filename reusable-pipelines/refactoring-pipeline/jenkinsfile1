@@ -9,14 +9,19 @@ pipeline {
     stages {
       stage('Audit tools') {
         steps {
+        	script {
+	                    def status = sh(returnStatus: true, script: 'pkr -version')
+	                    if (status != 0) {
+	                        echo "Error: Command exited with status ${status}"
+	                    } else {
+	                        echo "Command executed successfully"
+	                    }
+                }
           sh '''
               git version
               java -version
               a=`mvn -version`
-              echo "MAVEN MESSAGE IS - $a"
-              a=sh (pkr -version)
-              echo "PKR MESSAGE IS - $a"
-              
+              echo "MAVEN MESSAGE IS - $a"            
           '''
         }
       }
