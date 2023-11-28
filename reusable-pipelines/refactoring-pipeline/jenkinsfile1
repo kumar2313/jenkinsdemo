@@ -12,7 +12,8 @@ pipeline {
           sh '''
               git version
               java -version
-              mvn -version
+              a=`mvn -version`
+              echo $a
           '''
         }
       }
