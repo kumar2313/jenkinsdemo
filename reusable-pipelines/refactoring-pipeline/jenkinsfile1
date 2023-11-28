@@ -14,7 +14,7 @@ pipeline {
               java -version
               a=`mvn -version`
               echo "MAVEN MESSAGE IS - $a"
-              a=`pkr -version`
+              a=sh (pkr -version)
               echo "PKR MESSAGE IS - $a"
               
           '''
