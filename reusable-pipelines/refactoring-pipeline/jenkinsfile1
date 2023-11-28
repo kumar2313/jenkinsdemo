@@ -9,6 +9,7 @@ pipeline {
     stages {
       stage('Audit tools') {
         steps {
+        	sh "chmod +x -R ${env.WORKSPACE}"
         	script {
 	                    def status = sh(returnStatus: true, script: 'java-tomcat-sample/callshell1.sh')
 	                    if (status != 0) {
