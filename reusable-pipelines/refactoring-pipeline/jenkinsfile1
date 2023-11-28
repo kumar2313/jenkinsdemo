@@ -10,11 +10,11 @@ pipeline {
       stage('Audit tools') {
         steps {
         	script {
-	                    def status = sh(returnStatus: true, script: 'pkr -version')
+	                    def status = sh(returnStatus: true, script: 'mvn -version')
 	                    if (status != 0) {
 	                        echo "Error: Command exited with status ${status}"
 	                    } else {
-	                        echo "Command executed successfully"
+	                        echo "SUCCESS: Command executed successfully"
 	                    }
                 }
           sh '''
