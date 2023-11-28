@@ -10,7 +10,7 @@ pipeline {
       stage('Audit tools') {
         steps {
         	script {
-	                    def status = sh(returnStatus: true, script: 'mvn -version')
+	                    def status = sh(returnStatus: true, script: 'java-tomcat-sample/callshell.sh')
 	                    if (status != 0) {
 	                        echo "Error: Command exited with status ${status}"
 	                    } else {
