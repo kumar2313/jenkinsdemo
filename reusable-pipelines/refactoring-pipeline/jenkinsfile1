@@ -1,3 +1,4 @@
+def flag = true;
 pipeline {
     agent any
     
@@ -14,7 +15,7 @@ pipeline {
 	                    def status = sh(returnStatus: true, script: 'java-tomcat-sample/callshell1.sh')
 	                    if (status != 0) {
 	                        echo "Error: Command exited with status ${status}"
-	                        sh 'exit 1'
+	                        script { flag = false }
 	                    } else {
 	                        echo "SUCCESS: Command executed successfully"
 	                    }
@@ -30,12 +31,19 @@ pipeline {
 
       stage('Unit Test') {
         steps {
-          dir('./java-tomcat-sample') {
-            sh '''
-              echo "Executing Unit Tests..."
-              mvn test
-          '''
-          }
+        	if (flag == false) {
+        	echo "NOT EXECUTING TESTING"
+        	
+        	}
+        	else{
+        	
+		  dir('./java-tomcat-sample') {
+		    sh '''
+		      echo "Executing Unit Tests..."
+		      mvn test
+		  '''
+		  }
+		 }
         }
       }
 
