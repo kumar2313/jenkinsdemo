@@ -1,2 +1,2 @@
-echo "I am here"
+cat java-tomcat-sample/README.md
 exit 0
