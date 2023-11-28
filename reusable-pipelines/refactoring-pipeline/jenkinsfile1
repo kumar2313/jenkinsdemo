@@ -31,6 +31,7 @@ pipeline {
 
       stage('Unit Test') {
         steps {
+            script {
         	if (flag == false) {
         	echo "NOT EXECUTING TESTING"
         	
@@ -44,6 +45,7 @@ pipeline {
 		  '''
 		  }
 		 }
+	    }
         }
       }
 
