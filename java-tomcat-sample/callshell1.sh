@@ -1,2 +1,2 @@
 echo "I am here"
-exit 0
+exit 1
