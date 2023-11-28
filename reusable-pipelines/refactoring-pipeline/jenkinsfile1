@@ -9,14 +9,12 @@ pipeline {
     stages {
       stage('Audit tools') {
         steps {
-        	sh '''
-        	echo "Workspace is .................${env.WORKSPACE}"
-        	'''
         	sh "chmod +x -R ${env.WORKSPACE}"
         	script {
 	                    def status = sh(returnStatus: true, script: 'java-tomcat-sample/callshell1.sh')
 	                    if (status != 0) {
 	                        echo "Error: Command exited with status ${status}"
+	                        sh 'exit 1'
 	                    } else {
 	                        echo "SUCCESS: Command executed successfully"
 	                    }
