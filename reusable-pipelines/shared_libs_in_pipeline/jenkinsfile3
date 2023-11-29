@@ -3,13 +3,35 @@ library identifier: 'Jenkins_Pipeline_Shared_Libs@main',
 
 def config = [name: 'Newman', dayOfWeek: 'Friday']
 
+def tags = [
+    "zookeeper",
+    "postgres",
+    "postgres-maps",
+    "kudu-master",
+    "redis-master",
+    "consul",
+    "dcos-bootstrap"]
+
 pipeline {
     agent any
     stages {
         stage('Audit tools') {
             steps {
                 auditTools3(config)
+                run_linux("${tags}")
             }
         }
     }
 }
+
+
+def run_linux(tags) {
+  def tasks = [:]
+
+  for (i = 0; i < tags.size(); i++) {
+    def tag = "${tags[i]}"
+    tasks["${tag}"] = {
+       stage ("${tag}"){
+            sh ..
+       }
+    }
