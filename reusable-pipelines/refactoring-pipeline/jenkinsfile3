@@ -3,10 +3,11 @@ pipeline {
 
     parameters {
         booleanParam(name: 'RELEASE', defaultValue: false, description: 'Is this a Release Candidate?')
+        intParam(name: 'RELEASE_VERSION', defaultValue: 1.1.0, description: 'Release Version?')
     }
 
     environment {
-        RELEASE_VERSION = '1.1.0'
+        //RELEASE_VERSION = '1.1.0'
         INT_VERSION = 'R2'
     }
     stages {
