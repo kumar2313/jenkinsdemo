@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('Audit tools') {
             steps {
-                auditTools3(config)
+                //auditTools3(config)
                 run_linux("${tags}")
             }
         }
