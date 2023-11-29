@@ -33,11 +33,11 @@ def run_linux(tags) {
   for (i = 0; i < tags.size(); i++) {
     def tag = "${tags[i]}"
     //tasks["${tag}"] = {
-       stage ("${tag}"){
-        steps {
+       //stage ("${tag}"){
+        //steps {
             sh '''echo "I am here in the following"'''
-        }
-       }
+        //}
+       //}
     //}
     }
     }
