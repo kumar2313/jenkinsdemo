@@ -55,12 +55,8 @@ pipeline {
             }
 
             steps {
-                //archiveArtifacts('**/*.war')
-                archiveArtifacts artifacts: [
-		                    [artifact: 'target/myapp.war', fingerprint: true],
-		                    [artifact: 'target/myapp.jar', fingerprint: true]
-                ]
-            echo "Archiving"
+                archiveArtifacts('**/*.war')
+                echo "Archiving"
             }
         }
     }
