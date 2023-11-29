@@ -6,6 +6,7 @@ pipeline {
                 script {
                     def disk_size = sh(script: "/home/devopsm/a.sh", returnStdout: true).trim() as String
                     println("disk_size = ${disk_size}")
+                    addBadge(icon: "/static/8361d0d6/images/16x16/help.png", text: "help")
                 }
             }
         }
