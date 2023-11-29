@@ -21,10 +21,11 @@ pipeline {
     stages {
         stage('Audit tools') {
             steps {
+                script {
                 config.each { item ->
     
                     auditTools3(item)
-        
+                }
                 }
                 //auditTools3(config)
                 // echo "Audit tools"
