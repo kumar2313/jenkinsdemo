@@ -32,7 +32,7 @@ def run_linux(tags) {
     def tag = "${tags[i]}"
     tasks["${tag}"] = {
        stage ("${tag}"){
-            sh ..
+            sh 'echo "Running"'
        }
     }
     }
