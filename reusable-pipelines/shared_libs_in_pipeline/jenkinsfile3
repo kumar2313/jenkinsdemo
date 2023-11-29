@@ -29,7 +29,7 @@ pipeline {
 
 def run_linux(list) {
     list.each { item ->
-    stage{
+    stage(item){
         steps{
         echo "Hello ${item}"
         }
