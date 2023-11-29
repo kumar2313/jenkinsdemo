@@ -35,7 +35,7 @@ def run_linux(tags) {
     //tasks["${tag}"] = {
        //stage ("${tag}"){
         //steps {
-            sh '''echo "I am here in the following"'''
+            sh '''echo "${tag}"'''
         //}
        //}
     //}
