@@ -32,6 +32,10 @@ def run_linux(tag) {
 tag.each() {
          echo it
       }
+
+      for(String item: tag) {
+                        println item
+        }
   //for (i = 0; i < tags.size(); i++) {
    // def tag = "${tags[i]}"
 
