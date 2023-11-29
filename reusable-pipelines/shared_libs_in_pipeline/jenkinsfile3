@@ -27,9 +27,9 @@ pipeline {
 }
 
 
-def run_linux(tags) {
+def run_linux(tag) {
   def tasks = [:]
-tags.each() {
+tag.each() {
          echo it
       }
   //for (i = 0; i < tags.size(); i++) {
