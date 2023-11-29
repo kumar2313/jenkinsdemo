@@ -1,12 +1,6 @@
 library identifier: 'Jenkins_Pipeline_Shared_Libs@main',
         retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/kumar2313/Jenkins_Pipeline_Shared_Libs.git'])
 
-def config = [
-    [name: 'Newman1', dayOfWeek: 'Friday1'],
-[name: 'Newman2', dayOfWeek: 'Friday2'],
-[name: 'Newman3', dayOfWeek: 'Friday3']
-]
-
 def tags = [
     "zookeeper",
     "postgres",
@@ -15,6 +9,13 @@ def tags = [
     "redis-master",
     "consul",
     "dcos-bootstrap"]
+    
+def config = [
+    [name: 'Newman1', dayOfWeek: 'Friday1'],
+[name: 'Newman2', dayOfWeek: 'Friday2'],
+[name: 'Newman3', dayOfWeek: 'Friday3']
+]
+
 
 pipeline {
     agent any
