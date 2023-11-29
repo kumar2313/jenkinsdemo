@@ -19,7 +19,7 @@ pipeline {
             steps {
                 //auditTools3(config)
                 echo "Audit tools"
-                run_linux("${tags}")
+                run_linux(tags)
                 echo "Audit tools"
             }
         }
