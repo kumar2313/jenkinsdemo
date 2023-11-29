@@ -29,15 +29,18 @@ pipeline {
 
 def run_linux(tags) {
   def tasks = [:]
+tags.each() {
+         echo it
+      }
+  //for (i = 0; i < tags.size(); i++) {
+   // def tag = "${tags[i]}"
 
-  for (i = 0; i < tags.size(); i++) {
-    def tag = "${tags[i]}"
     //tasks["${tag}"] = {
        //stage ("${tag}"){
         //steps {
-            sh '''echo "${tag}"'''
+            //sh '''echo "${tag}"'''
         //}
        //}
     //}
-    }
+    //}
     }
