@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                    def disk_size = sh(script: "df / --output=avail | tail -1", returnStdout: true).trim() as Integer
+                    def disk_size = sh(script: "/home/devopsm/a.sh", returnStdout: true).trim() as String
                     println("disk_size = ${disk_size}")
                 }
             }
