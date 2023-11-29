@@ -3,7 +3,7 @@ pipeline {
 
     parameters {
         booleanParam(name: 'RELEASE', defaultValue: false, description: 'Is this a Release Candidate?')
-        intParam(name: 'RELEASE_VERSION', defaultValue: 1.1.0, description: 'Release Version?')
+        stringParam(name: 'RELEASE_VERSION', defaultValue: '1.1.0', description: 'Release Version?')
     }
 
     environment {
