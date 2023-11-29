@@ -6,7 +6,7 @@ pipeline {
                 script {
                     def disk_size = sh(script: "/home/devopsm/a.sh", returnStdout: true).trim() as String
                     println("disk_size = ${disk_size}")
-                    addBadge(icon: "https://cdn.jsdelivr.net/gh/jenkinsci/badge-plugin@master/src/doc/summary.png", text: "help")
+                    addBadge(icon: "https://github.com/jenkinsci/jenkins/blob/master/war/src/main/webapp/images/32x32/aborted_anime.gif?raw=true", text: "help")
                 }
             }
         }
