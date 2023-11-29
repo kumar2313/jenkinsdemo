@@ -55,7 +55,8 @@ pipeline {
             }
 
             steps {
-                archiveArtifacts('**/*.war')
+                //archiveArtifacts('**/*.war')
+                archiveArtifacts artifacts: '**/*.war', onlyIfSuccessful: true
                 echo "Archiving"
             }
         }
