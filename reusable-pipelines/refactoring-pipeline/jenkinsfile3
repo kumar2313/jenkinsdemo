@@ -53,9 +53,10 @@ pipeline {
                 expression { return params.RELEASE }
             }
 
-            //steps {
+            steps {
             //    archiveArtifacts('**/*.war')
-            //}
+            echo "Archiving"
+            }
         }
     }
 
