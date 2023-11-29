@@ -54,7 +54,7 @@ pipeline {
             }
 
             steps {
-            //    archiveArtifacts('**/*.war')
+                archiveArtifacts('**/*.war')
             echo "Archiving"
             }
         }
@@ -62,7 +62,8 @@ pipeline {
 
     post {
         always {
-            cleanWs()
+            //cleanWs()
+            echo "Time to clean"
         }
     }
 }
