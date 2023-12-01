@@ -1,0 +1,28 @@
+pipeline {
+    agent {
+        docker {
+            image 'mcr.microsoft.com/dotnet/sdk:latest'
+            args '-u root'
+        }
+    }
+    
+    environment {
+      VERSION = '0.1.0'
+      RELEASE_VERSION = 'R.2'
+    }
+
+    stages {
+      stage('Audit tools') {
+        steps {
+          sh '''
+              java -version
+              mvn -version
+          '''
+          sh 'printenv'
+          sh 'ls -l $WORKSPACE'
+        }
+      }
+
+      
+    }
+}
