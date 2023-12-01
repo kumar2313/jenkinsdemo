@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'maven'
+            image 'maven:latest'
             args '-u root'
         }
     }
@@ -9,6 +9,7 @@ pipeline {
     environment {
       VERSION = '0.1.0'
       RELEASE_VERSION = 'R.2'
+      HOME="."
     }
 
     stages {
