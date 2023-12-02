@@ -1,4 +1,9 @@
 pipeline {
+  environment {
+      VERSION = '0.1.0'
+      RELEASE_VERSION = 'R.2'
+      HOME="/home/devopsm"
+    }
     agent {
         docker {
             image 'maven:3.3.3'
@@ -7,16 +12,12 @@ pipeline {
         }
     }
     
-    environment {
-      VERSION = '0.1.0'
-      RELEASE_VERSION = 'R.2'
-      HOME="."
-    }
+    
 
     stages {
       stage('Audit tools') {
         environment {
-                  home="."
+                  HOME="/home/devopsm"
                 }
         steps {
           sh '''
@@ -30,7 +31,7 @@ pipeline {
 
       stage('Unit Test') {
         environment {
-                  home="."
+                  HOME="/home/devopsm"
                 }
         steps {
           dir('./java-tomcat-sample') {
