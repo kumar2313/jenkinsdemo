@@ -15,6 +15,9 @@ pipeline {
 
     stages {
       stage('Audit tools') {
+        environment {
+                  home="."
+                }
         steps {
           sh '''
               java -version
@@ -26,6 +29,9 @@ pipeline {
       }
 
       stage('Unit Test') {
+        environment {
+                  home="."
+                }
         steps {
           dir('./java-tomcat-sample') {
             sh '''
