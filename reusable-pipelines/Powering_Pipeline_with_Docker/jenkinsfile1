@@ -2,11 +2,11 @@ pipeline {
   environment {
       VERSION = '0.1.0'
       RELEASE_VERSION = 'R.2'
-      HOME="/home/devopsm"
+      //HOME="/home/devopsm"
     }
     agent {
         docker {
-            image 'maven:3.3.3'
+            image 'maven:latest'
             //args '-u root'
             // args '-v /home/devopsm'
         }
@@ -16,9 +16,9 @@ pipeline {
 
     stages {
       stage('Audit tools') {
-        environment {
-                  HOME="/home/devopsm"
-                }
+        // environment {
+        //           HOME="/home/devopsm"
+        //         }
         steps {
           sh '''
               java -version
@@ -30,9 +30,9 @@ pipeline {
       }
 
       stage('Unit Test') {
-        environment {
-                  HOME="/home/devopsm"
-                }
+        // environment {
+        //           HOME="/home/devopsm"
+        //         }
         steps {
           dir('./java-tomcat-sample') {
             sh '''
