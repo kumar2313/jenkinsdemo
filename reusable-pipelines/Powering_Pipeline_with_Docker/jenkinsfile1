@@ -7,7 +7,7 @@ pipeline {
     agent {
         docker {
             image 'maven:latest'
-            args '-u root -v /root/tempdir/jenkins:/var/lib/jenkins'
+            args '-u root -v /root/tempdir/jenkins:/var/lib/jenkins --privileged=true --name testdocker'
             // args '-v /home/devopsm'
         }
     }
